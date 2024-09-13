@@ -1,0 +1,52 @@
+<HTML xmlns="http://www.w3.org/1999/xhtml" >
+<HEAD>
+<TITLE>Магазин книг</TITLE>
+<LINK href="images/style.css" rel="stylesheet" type="text/css"/>
+</HEAD>
+<BODY style="font-size: 12pt">
+<TABLE class="pageborder" border="0" width="600">
+<TR>
+<TD width="100%">
+<SPAN class="text1">Магазин книг</SPAN>
+<BR/>
+<HR class="line"/><HR class="line" width="70%" align="left"/>
+</TD>
+</TR>
+<TR>
+<TD style="height: 17px; text-align: right;" width="100%">
+<SPAN style="color: #669999; font-size:13pt; font-family: 'Century Schoolbook'">
+<A href="newfile.xml" style="text-decoration: none">Выбор</A> &#160;</SPAN>
+<SPAN style="color: #ff0000; font-size:13pt; font-family: 'Century Schoolbook'">Просмотр</SPAN>
+</TD>
+</TR>
+<TR>
+<TD><BR/>
+<TABLE width="500" align="center" class="headborder">
+<TR>
+<TD width="30%"><SPAN class="headtext">Автор</SPAN></TD>
+<TD width="40%" align="center"><SPAN class="headtext">Название</SPAN></TD>
+<TD width="10%" align="center"><SPAN class="headtext">Цена</SPAN></TD>
+<TD width="20%" align="center"><SPAN class="headtext">Жанр</SPAN></TD>
+</TR>
+</TABLE>
+<TABLE width="500" align="center" class="textborder">
+<TR>
+<TD width="30%"><SPAN class="tabletext"></SPAN></TD>
+<TD width="40%" align="center"><SPAN class="tabletext"></SPAN></TD>
+<TD width="10%" align="center"><SPAN class="tabletext"></SPAN></TD>
+<TD width="20%" align="center"><SPAN class="tabletext"></SPAN></TD>
+</TR>
+</TABLE>
+<xsl:for-each select="Books/Books/Books/Genre">
+<TD width="30%"><SPAN class="tabletext"><xsl:value-of select="../@fio"/></SPAN></TD>
+<TD width="40%" ><SPAN class="tabletext"><xsl:value-of select="@name"/></SPAN></TD>
+<TD width="10%" ><SPAN class="tabletext"><xsl:value-of select="@price"/></SPAN></TD>
+<TD width="20%" ><SPAN class="tabletext"><xsl:value-of select="@genre"/></SPAN></TD>
+</xsl:for-each>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+</xsl:template>
+</xsl:stylesheet>

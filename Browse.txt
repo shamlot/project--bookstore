@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<HTML xmlns="http://www.w3.org/1999/xhtml" >
+<HEAD>
+<TITLE>Магазин книг</TITLE>
+<LINK href="images/style.css" rel="stylesheet" type="text/css"/>
+</HEAD>
+<BODY style="font-size: 12pt">
+<form action="file.xml" method="get" name="ff">
+<TABLE class="pageborder" border="0" width="600">
+<TR>
+<TD width="100%">
+<SPAN class="text1">Магазин книг</SPAN>
+<BR/>
+<HR class="line"/><HR class="line" width="70%" align="left"/>
+</TD>
+</TR>
+<TR>
+<TD style="height: 17px; text-align: right;" width="100%">
+<SPAN style="color: #ff0000; font-size:13pt; font-family: 'Century Schoolbook'">Выбор &#160;</SPAN>
+<SPAN style="color: #669999; font-size:13pt; font-family: 'Century Schoolbook'"><A href="javascript:document.ff.submit();" style="text-decoration:
+ none">Просмотр</A></SPAN>
+</TD>
+</TR>
+
+<TR>
+<TD><BR/>
+<TABLE align="center" width="550">
+<TR height="50px" valign="top">
+<TD style="width: 163px"><SPAN class="text3">Жанр</SPAN></TD>
+<TD>
+<select name="Genre" style="width: 350px">
+<option value="0" selected="selected">Выбор жанра...</option>
+<xsl:for-each select="Bookstore/Genre">
+<option>
+<xsl:attribute name="value">
+<xsl:value-of select="@ID"/>
+</xsl:attribute>
+<xsl:value-of select="@name"/>
+</option>
+</xsl:for-each>
+</select>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</form>
+</BODY>
+</HTML>
+</xsl:template>
+</xsl:stylesheet>
+. Листинг кода файла «Browse.xsl»:
+<?xml version="1.0" encoding="windows-1251" ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
